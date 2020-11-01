@@ -1,0 +1,43 @@
+shir_brosh
+316124767
+Shir Brosh
+
+I discussed the exercise with: Gadi Fleischer, Daniel Shookroun.
+
+=============================
+=  README for ex9:   =
+=============================
+
+This exercise contains 4 files:
+car.py- A class that defined a Car object, a pawn from the game 'rush-hour', each car has
+    a name, length, location on the game board and orientation.
+board.py- A class that defined a Board object, a play board of the game 'rush-hour'. A
+    board object contains the actual board- a list of lists, each list represent a
+    row in the game board, and a car dictionary that keeps all the Cars objects that
+    participate in the specific game.
+game.py- A class that defined a Game object, this Object runs the game 'rush-hour'.
+    The game has a board which is a Board object and a car dictionary that keeps all
+    the Cars objects that participate in the specific game.
+helper.py - contains a load_json function.
+
+
+==================
+=  Description: =
+==================
+I added some auxiliary functions-
+in board.py:
+    1.__wanted_cor_row_and_col - A function that returns the cell location which must be empty
+        for the car to move to the movekey direction- as a tuple, and also as integer that
+        represents the row and column of the location.
+    2.__in_range - A function that returns True if the given coordinate is in the board
+        limits of False otherwise.
+    3.__check_legal_move - A function that checks if a move is legal according to the game rules.
+in game.py:
+    1.__end_game - A function that determines if the player won the game- it checks if a car
+        has reached the target location.
+    2.__check_valid_input- A function that checks if the users input is valid according to the game
+        requirements. It returns True if valid or False otherwise
+in the main function:
+    __read_jason- A function that receives a file name for a jason file, opens, and reads the
+        file and if all the information given in the file is valid according to the
+        game rules, the data is updated to the game.
